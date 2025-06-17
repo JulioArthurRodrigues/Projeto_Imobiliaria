@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+  }
+  header {
+    background: #111;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header h1 {
+    margin: 0;
+    font-family: Georgia, serif;
+    color: #bdbbff;
+  }
+  nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .banner {
+    background-image: url(''); /* imagem de fundo da primeira tela */
+    background-size: cover;
+    background-position: center;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 20px;
+    text-align: center;
+  }
+  .botoes .btn {
+    display: inline-block;
+    background: #0d0d26;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+  }
+  .formulario {
+    background-image: url('fundo-form.jpg'); /* imagem de fundo dos cadastros */
+    background-size: cover;
+    padding: 40px;
+    color: rgb(0, 0, 0);
+  }
+  .formulario h2 {
+    text-align: center;
+  }
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: auto;
+  }
+  input, button {
+    margin: 10px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  button {
+    background: #111;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  .imoveis {
+    padding: 40px;
+    background-image: url('fundo-imoveis.jpg'); /* fundo com prédios de vidro */
+    background-size: cover;
+  }
+  .cards {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  .cards img {
+    width: 30%;
+    border-radius: 10px;
+  }
