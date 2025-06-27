@@ -1,20 +1,19 @@
 <?php
 
 $nome = $_POST['nome'];
-$telefone = $_POST['telefone'];
 $email = $_POST['email'];
-$creci = $_POST['creci'];
+$senha = $_POST['senha'];
 
 
 include 'conexao.php';
 
-$insert = "INSERT INTO tb_user VALUES (null, '$nome', '$telefone', '$email', '$creci')";
+$insert = "INSERT INTO tb_user VALUES (null, '$nome', '$email', '$senha')";
 
 $query = $conexao ->query($insert);
 
 if ($conexao ->query($insert)) {
     echo "<script>alert('Corretor Cadastrado com Sucesso!');
-    location.href = '../cadastro.html'</script>";
+    location.href = '../tela_login.html'</script>";
 }else{
     echo "<script>alert('Corretor não cadastrado!!'); history.back() </script>";
 
