@@ -14,9 +14,9 @@ $statusimovel = $_POST['statusimovel'];
 
 include 'conexao.php';
 
-$insert = "INSERT INTO tb_user VALUES (null, '$nome', '$cpf', '$cnpj', '$endereco', '$n', '$cep', '$telefone', '$email')";
+$insert = "INSERT INTO tb_imóvel VALUES (null, '$tipoimovel', '$nomeendececo', '$numeroendereco', '$complemento', '$cidade', '$estado', '$cep', '$valorvenda', '$valoraluguel', '$descricaoimovel', '$statusimovel')";
 
-$query = $conexao ->query($insert);
+$insert = $conexao->query($insert);
 
 if ($conexao ->query($insert)) {
     echo "<script>alert('Imóvel Cadastrado com Sucesso!');

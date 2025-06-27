@@ -20,6 +20,17 @@ CREATE TABLE tb_cliente (
     email VARCHAR(45) NOT NULL
 );
 
+CREATE TABLE tb_imobiliaria (
+    cd_imobiliaria INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    nm_imobiliaria VARCHAR(45) NOT NULL,
+    nm_endereco VARCHAR(45) NOT NULL,
+    nr_endereco CHAR(10) NOT NULL,
+    nm_bairro VARCHAR(45) NOT NULL,
+    nm_cidade VARCHAR(45) NOT NULL,
+    nm_estado VARCHAR(45) NOT NULL,
+    cep_imobiliaria VARCHAR(10) NOT NULL
+);
+
 CREATE TABLE tb_corretor (
     cd_corretor INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     nm_corretor VARCHAR(45) NOT NULL,
@@ -32,16 +43,6 @@ CREATE TABLE tb_corretor (
     FOREIGN KEY (fk_cd_imobiliaria) REFERENCES tb_imobiliaria(cd_imobiliaria)
 );
 
-CREATE TABLE tb_imobiliaria (
-    cd_imobiliaria INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    nm_imobiliaria VARCHAR(45) NOT NULL,
-    nm_endereco VARCHAR(45) NOT NULL,
-    nr_endereco CHAR(10) NOT NULL,
-    nm_bairro VARCHAR(45) NOT NULL,
-    nm_cidade VARCHAR(45) NOT NULL,
-    nm_estado VARCHAR(45) NOT NULL,
-    cep_imobiliaria VARCHAR(10) NOT NULL
-);
 
 CREATE TABLE tb_imóvel (
     cd_imovel INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -108,17 +109,15 @@ VALUES (1, 'Ana Beatriz Souza', '12345678900', '', 'Rua da Harmonia', 45, '01001
 (9, 'Editora Nova Era EPP', '', '45678901000123', 'Rua das Letras', 120, '01400-100', '(21) 3555-6677', 'contato@novaera.com'),
 (10, 'Logística Rápida Express', '', '56789012000134', 'Av. do Transporte', 845, '05000-300', '(31) 3003-7788', 'logistica@rapidaexpress.com.br');
 
-INSERT INTO tb_corretor (cd_corretor, nm_corretor, creci_corretor, telefone_corretor, email_corretor, fk_cd_usuario, fk_cd_imobiliaria)
-VALUES (1, 'Danielle Vieira', '340862', '(11) 91234-5678', 'danivieiraa.imobiliaria@gmail.com', 1, 1);
-
-
 INSERT INTO tb_imobiliaria (cd_imobiliaria, nm_imobiliaria, nm_endereco, nr_endereco, nm_bairro, nm_cidade, nm_estado, cep_imobiliaria)
 VALUES (1, 'Dani Imóveis', 'Avenida Nossa Senhora de Fátima', '100', 'Agenor de Campos', 'Mongaguá', 'SP', '11730-000');
 
+INSERT INTO tb_corretor (cd_corretor, nm_corretor, creci_corretor, telefone_corretor, email_corretor, fk_cd_usuario, fk_cd_imobiliaria)
+VALUES (1, 'Danielle Vieira', '340862', '(11) 91234-5678', 'danivieiraa.imobiliaria@gmail.com', 1, 1);
 
 INSERT INTO tb_imóvel (cd_imovel, tipo_imovel, nm_endereco, nr_endereco, nm_complemento, nm_bairro, nm_cidade, nm_estado, cep_imovel, valor_venda, valor_aluguel, descricao_imovel, status_imovel, fk_cd_imobiliaria, fk_cd_cliente)
 VALUES (1, 'Apartamento', 'Avenida São Paulo', '5300', 'Apto 12', 'Centro', 'Mongaguá', 'SP', '11730-000', 500000, 2.500, 'Apartamento com 2 dormitórios e 2 banheiros', 'Disponível', 1, 1),
-(2, 'Casa', 'Avenida Presidente Kennedy', '15300', 'Casa 1', 'Guilhermina', 'Praia Grande', 'SP', '11703-500', 1500000.00, 5.500, 'Casa com 4 dormitórios e 2 banheiros', 'Disponível', 1, 3);
+(2, 'Casa', 'Avenida Presidente Kennedy', '15300', 'Casa 1', 'Guilhermina', 'Praia Grande', 'SP', '11703-500', 1500000.00, 5500, 'Casa com 4 dormitórios e 2 banheiros', 'Disponível', 1, 3);
 
 INSERT INTO tb_visita (cd_visita, endereco_imovel, nr_endereco_imovel, nm_bairro, nm_cidade, nm_complemento, dt_visita, fk_cd_cliente)
 VALUES (1, 'Avenida São Paulo', '5300', 'Centro', 'Mongaguá', 'Apto 12', '2025-06-01 14:00:00', 1),
@@ -133,6 +132,11 @@ VALUES ('2025-06-10', '2026-06-10', 3000.00, 'Aluguel', 1, 1, 1, 1);
 UPDATE tb_imóvel
 SET valor_aluguel = 3000
 WHERE cd_imovel = 1;
+
+UPDATE tb_imóvel
+SET valor_aluguel = 5500
+WHERE cd_imovel = 2;
+
 
 DELETE FROM tb_visita
 WHERE cd_visita = 5;
