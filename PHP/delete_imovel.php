@@ -11,7 +11,7 @@
          $deletar = "DELETE FROM tb_imovel WHERE id_imovel = $id";
 
         // FUNÇÃO QUERY EXECUTA O SELECT DENTRO DO BANCO //
-        $query = $conexao->query($deletar);
+        $resultado = $conexao->query($deletar);
          
 
         if ($query ) { 

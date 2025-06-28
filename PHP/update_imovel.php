@@ -69,7 +69,7 @@ $resultado = $query->fetch_assoc();
             <input type="text" name="aluguel" value="<?php echo $resultado['valor_aluguel'];?>" id="aluguel">
 
             <label for="descricao">Descrição</label>
-            <input type="text" name="descricao" value="<?php echo $resultado['descrição_imovel'];?>" id="descricao">
+            <input type="text" name="descricao" value="<?php echo $resultado['descricao_imovel'];?>" id="descricao">
 
             <label for="status">Status</label>
             <input type="text" name="status" value="<?php echo $resultado['status_imovel'];?>" id="status">
@@ -77,7 +77,7 @@ $resultado = $query->fetch_assoc();
 
             <div class="botao">
                 <button type="submit">Editar</button>
-                <a href="index.html">Voltar</a>
+                <a href="listar_imoveis.php">Voltar</a>
             </div>
         </form>
     </div>
